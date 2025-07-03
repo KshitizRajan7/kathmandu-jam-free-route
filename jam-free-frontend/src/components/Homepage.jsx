@@ -17,7 +17,6 @@ const Homepage = () => {
                 priority
             />
 
-            {/* Overlay */}
             {locationOff && (
                 <div className="absolute top-0 left-0 z-10 h-screen w-screen bg-gray-900/50 flex justify-center items-center">
                     <div className="bg-white/50 text-black p-6 rounded-lg shadow-lg text-center transition-">
