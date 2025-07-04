@@ -7,6 +7,9 @@ It provides a user interface to find traffic-free routes in Kathmandu Valley, fe
 ## Features
 
 - Bottom Navigation Menu with quick access to Map, Alternate Routes, Location Selection, Traffic Updates, and User Login
+- User authentication modal with login and register forms (popup on clicking the user icon)
+- Responsive design improvements for mobile navigation
+- Enhanced context usage for user state management
 
 ## Getting Started
 
@@ -20,3 +23,4 @@ yarn dev
 pnpm dev
 # or
 bun dev
+```
