@@ -26,7 +26,7 @@ const UserRegister = ({ onClose, onSwitchToLogin }) => {
         <div className='bg-white/70 rounded p-5'>
             <button className='float-right' onClick={onClose}>X</button>
             <div className='flex flex-col justify-center items-center gap-2'>
-                <h1 className='text-gray-700'>User Register</h1>
+                <h1 className='font-semibold'>User Register</h1>
                 <form onSubmit={handleSubmit} className="flex flex-col justify-center gap-2 p-4 ">
                     <div className="flex flex-col">
                         <label htmlFor="email" className="mb-1">Full Name:</label>

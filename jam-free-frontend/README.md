@@ -6,10 +6,23 @@ It provides a user interface to find traffic-free routes in Kathmandu Valley, fe
 
 ## Features
 
-- Bottom Navigation Menu with quick access to Map, Alternate Routes, Location Selection, Traffic Updates, and User Login
-- User authentication modal with login and register forms (popup on clicking the user icon)
-- Responsive design improvements for mobile navigation
-- Enhanced context usage for user state management
+- **Bottom Navigation Menu** for quick access to:
+  - Map
+  - Alternate Routes
+  - Location Selection (opens a modal for source/destination)
+  - Traffic Updates
+  - User Login (shows user name if logged in)
+- **User Authentication Modal** with login and register forms (popup on clicking the user icon)
+- **Source/Destination Selection Modal** for choosing start and end points
+- **Responsive Design** for seamless mobile navigation
+- **Enhanced Context Usage** for user state management
+
+## Recent Updates (July 5, 2025)
+
+- Added a fixed bottom navigation menu with icons and labels for main features
+- Integrated modal popups for location selection and authentication
+- Improved mobile responsiveness and user experience
+- Display user name in the menu when logged in
 
 ## Getting Started
 
@@ -24,3 +37,5 @@ pnpm dev
 # or
 bun dev
 ```
+
+Open [http://localhost:3000](http://localhost:3000) to view the

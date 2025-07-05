@@ -26,7 +26,7 @@ const UserLogin = ({ onClose, onSwitchToRegister }) => {
     <div className='bg-white/70 rounded p-5'>
       <button className='float-right' onClick={onClose}>X</button>
       <div className='flex flex-col justify-center items-center gap-2'>
-        <h1 className='text-gray-700'>User Login</h1>
+        <h1 className='font-semibold'>User Login</h1>
         <form onSubmit={handleSubmit} className="flex flex-col justify-center gap-2 p-4 ">
           <div className="flex flex-col">
             <label htmlFor="email" className="mb-1">Email:</label>
@@ -53,8 +53,8 @@ const UserLogin = ({ onClose, onSwitchToRegister }) => {
             />
           </div>
           <div className='text-center'>
-            <button type="submit" className="bg-green-600 text-white py-2 px-4 rounded-xl hover:bg-blue-700 transition ">
-              {loading ? 'Logging in... ' : 'Login'};
+            <button type="submit" className="cursor-pointer bg-green-600 text-white py-2 px-4 rounded-xl hover:bg-blue-700 transition ">
+              {loading ? 'Logging in... ' : 'Login'}
             </button>
           </div>
         </form>
@@ -62,7 +62,7 @@ const UserLogin = ({ onClose, onSwitchToRegister }) => {
           <p>
             No Account?
             <span>
-              <button onClick={() => onSwitchToRegister("register")} className='bg-blue-600 text-white py-2 px-4 rounded-xl hover:bg-white hover:text-black transition'>Register</button>
+              <button onClick={() => onSwitchToRegister("register")} className='cursor-pointer bg-blue-600 text-white py-2 px-4 rounded-xl hover:bg-white hover:text-black transition'>Register</button>
             </span>
           </p>
         </div>
