@@ -11,7 +11,26 @@ const Menu = () => {
     const [authForm, setAuthForm] = useState(null);
     const [showSourceDestinationModal, setShowSourceDestinationModal] = useState(false);
     return (
-        <div className='fixed bottom-0 left-0 w-full bg-gray-600/50 z-50'>
+        <div className='fixed bottom-0 left-0 w-full text-white bg-gray-600/50 z-50'>
+            <ul className='flex justify-between w-full h-6 text-sm font-medium p-2'>
+                <li className='flex items-center gap-2'>
+                    <span className='w-4 h-4 bg-[#10C886] rounded'></span>
+                    Smooth
+                </li>
+                <li className='flex items-center gap-2'>
+                    <span className='w-4 h-4 bg-[#FFCF42] rounded'></span>
+                    Moderate
+                </li>
+                <li className='flex items-center gap-2'>
+                    <span className='w-4 h-4 bg-[#F34E41] rounded'></span>
+                    Heavy
+                </li>
+                <li className='flex items-center gap-2'>
+                    <span className='w-4 h-4 bg-red-950 rounded'></span>
+                    Traffic jams
+                </li>
+            </ul>
+
             <ul className='flex justify-between p-2 divide-x divide-white text-white text-sm text-center items-center h-12'>
                 <li className='px-4 flex flex-col items-center'>
                     <Map size={20} />

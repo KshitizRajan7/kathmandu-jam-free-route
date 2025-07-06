@@ -3,6 +3,8 @@ import Image from "next/image";
 import React, { useState } from "react";
 import DirectDestination from "./modal/DirectDestination";
 import TurnOnLocation from "./modal/TurnOnLocation";
+import { GoogleMap } from "@react-google-maps/api";
+import Map from "./Map";
 
 const Homepage = () => {
   const [locationOff, setLocationOff] = useState(true);
@@ -12,14 +14,7 @@ const Homepage = () => {
 
   return (
     <div className="relative h-screen w-screen">
-      <Image
-        src="/map.png"
-        alt="Image of map"
-        layout="fill"
-        objectFit="cover"
-        className="z-0"
-        priority
-      />
+      <Map className="h-screen w-screen" />
 
       {/* Location prompt */}
       {locationOff && (
