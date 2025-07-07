@@ -8,28 +8,30 @@ import Map from "./Map";
 
 const Homepage = () => {
   const [locationOff, setLocationOff] = useState(true);
+  const [userLocation, setUserLocation] = useState(null);
   const [showDestinationModal, setShowDestinationModal] = useState(false);
   const [destinationInput, setDestinationInput] = useState("");
+  const [destinationCoords, setDestinationCoords] = useState("");
   const [selectedCity, setSelectedCity] = useState("Kathmandu");
 
   return (
     <div className="relative h-screen w-screen">
-      <Map className="h-screen w-screen" />
+      <Map className="h-screen w-screen" userLocation={userLocation} destinationCoords={destinationCoords} />
 
-      {/* Location prompt */}
       {locationOff && (
         <TurnOnLocation
+          setUserLocation={setUserLocation}
           setLocationOff={setLocationOff}
           setShowDestinationModal={setShowDestinationModal} />
       )}
 
-      {/* Destination modal */}
       {showDestinationModal && (
         <DirectDestination
           destinationInput={destinationInput}
           setDestinationInput={setDestinationInput}
           selectedCity={selectedCity}
           setSelectedCity={setSelectedCity}
+          setDestinationCoords={setDestinationCoords}
           setShowDestinationModal={setShowDestinationModal}
         />
 

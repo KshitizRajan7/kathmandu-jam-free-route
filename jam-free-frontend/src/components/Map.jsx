@@ -1,6 +1,6 @@
 'use client';
-import React from 'react';
-import { GoogleMap, LoadScript, TrafficLayer } from '@react-google-maps/api';
+import React, { use, useEffect, useState } from 'react';
+import { DirectionsRenderer, DirectionsService, GoogleMap, LoadScript, Marker, TrafficLayer } from '@react-google-maps/api';
 
 const containerStyle = {
     width: '100%',
@@ -30,12 +30,38 @@ const options = {
 };
 
 
-const Map = () => {
+const Map = ({ userLocation, destinationCoords }) => {
     const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+    const [direction, setDirection] = useState(null);
+
+    useEffect(() => {
+        if (userLocation && destinationCoords) {
+            const directionsService = new window.google.maps.DirectionsService();
+            directionsService.route(
+                {
+                    origin: userLocation,
+                    destination: destinationCoords,
+                    travelMode: window.google.maps.TravelMode.DRIVING,
+                },
+                (result, status) => {
+                    if (status === window.google.maps.DirectionsStatus.OK) {
+                        setDirection(result);
+                    } else {
+                        console.error(`error fetching directions ${result}`);
+                    }
+                }
+            );
+        }
+    }, [userLocation, destinationCoords]);
+
+
     return (
         <div className="w-screen h-screen">
             <LoadScript googleMapsApiKey={apiKey} libraries={['places']}>
                 <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={12} options={options}>
+                    {userLocation && <Marker position={userLocation} />}
+                    {destinationCoords && <Marker position={destinationCoords} />}
+                    {direction && <DirectionsRenderer directions={direction} />}
                     <TrafficLayer />
                 </GoogleMap>
             </LoadScript>

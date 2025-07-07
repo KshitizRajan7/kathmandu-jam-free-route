@@ -18,6 +18,8 @@ It provides a user interface to find traffic-free routes in Kathmandu Valley, fe
 - **Responsive Design** for seamless mobile navigation
 - **Enhanced Context Usage** for user state management
 - **Google Maps Integration** using API key stored in `.env.local` (replaced static map with dynamic rendering)
+- **Location Control:** Added "Turn On Location" feature to enable browser geolocation and mark the user's current position on the map.
+- **Direct Destination Search:** Destination component now searches for coordinates and marks both the user's and
 
 ## Recent Updates (July 5, 2025)
 
