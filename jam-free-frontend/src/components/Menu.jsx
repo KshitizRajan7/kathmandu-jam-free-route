@@ -6,7 +6,7 @@ import UserRegister from './users/UserRegister';
 import UserContext from '@/context/UserContext';
 import SourceDestinationModal from './modal/SourceDestinationModal';
 
-const Menu = () => {
+const Menu = ({ setResetMap, setSelectedSourceCoords, setSelectedDestinationCoords }) => {
     const { user } = useContext(UserContext);
     const [authForm, setAuthForm] = useState(null);
     const [showSourceDestinationModal, setShowSourceDestinationModal] = useState(false);
@@ -32,7 +32,7 @@ const Menu = () => {
             </ul>
 
             <ul className='flex justify-between p-2 divide-x divide-white text-white text-sm text-center items-center h-12'>
-                <li className='px-4 flex flex-col items-center'>
+                <li className='px-4 flex flex-col items-center' onClick={() => { setResetMap(true), setSelectedSourceCoords(null), setSelectedDestinationCoords(null) }}>
                     <Map size={20} />
                     <span>Map</span>
                 </li>
@@ -56,7 +56,7 @@ const Menu = () => {
             {
                 showSourceDestinationModal && (
                     <div className='bg-gray-800/30 w-screen h-screen flex justify-center items-center'>
-                        <SourceDestinationModal onClose={() => setShowSourceDestinationModal(false)} />
+                        <SourceDestinationModal onClose={() => setShowSourceDestinationModal(false)} setSelectedSourceCoords={setSelectedSourceCoords} setSelectedDestinationCoords={setSelectedDestinationCoords} />
                     </div>
                 )
             }

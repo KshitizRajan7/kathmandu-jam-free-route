@@ -30,7 +30,7 @@ const options = {
 };
 
 
-const Map = ({ userLocation, destinationCoords }) => {
+const Map = ({ userLocation,destinationCoords, selectedDestinationCoords, selectedSourceCoords }) => {
     const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
     const [direction, setDirection] = useState(null);
 
@@ -52,15 +52,17 @@ const Map = ({ userLocation, destinationCoords }) => {
                 }
             );
         }
-    }, [userLocation, destinationCoords]);
+    }, [userLocation,destinationCoords]);
 
 
     return (
         <div className="w-screen h-screen">
             <LoadScript googleMapsApiKey={apiKey} libraries={['places']}>
                 <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={12} options={options}>
-                    {userLocation && <Marker position={userLocation} />}
-                    {destinationCoords && <Marker position={destinationCoords} />}
+                    {(userLocation && !selectedSourceCoords) && <Marker position={userLocation} />}
+                    {selectedSourceCoords && <Marker position={selectedSourceCoords} />}
+                    {(destinationCoords && !selectedDestinationCoords) && <Marker position={destinationCoords} />}
+                    {selectedDestinationCoords && <Marker position={selectedDestinationCoords} />}
                     {direction && <DirectionsRenderer directions={direction} />}
                     <TrafficLayer />
                 </GoogleMap>
