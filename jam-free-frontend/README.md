@@ -24,14 +24,14 @@ It provides a user interface to find traffic-free routes in Kathmandu Valley, fe
 - **Reset Map:** Added a resetMap feature using `useRef` to return the map to its initial position
 - **Conditional Menu Visibility:** Menu is now visible only when no modal is open on the screen
 - **Mock Traffic Data:** Added mock data for traffic situations; notifications now appear for heavy traffic regions on the map
-- **Notification Modal:** Implemented a notification modal to display information
+- **Notification Modal:** Implemented a notification modal to display information about heavy traffic regions
 
 ## Recent Updates (July 5, 2025)
 
-- Added a fixed bottom navigation menu with icons and labels for main features
-- Integrated modal popups for location selection and authentication
-- Improved mobile responsiveness and user experience
-- Display user name in the menu when logged in
+- Added a resetMap feature using `useRef` to return the map to its initial position
+- Menu is now visible only when no modal is open on the screen
+- Added mock data for traffic situations; notifications now appear for heavy traffic regions on the map
+- Implemented a notification modal to display information about heavy traffic regions
 
 ## Getting Started
 
