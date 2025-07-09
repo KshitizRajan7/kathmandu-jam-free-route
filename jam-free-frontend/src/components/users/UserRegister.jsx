@@ -23,7 +23,7 @@ const UserRegister = ({ onClose, onSwitchToLogin }) => {
         onClose();
     }
     return (
-        <div className='bg-white/70 rounded p-5'>
+        <div className='bg-white/70 rounded p-5 text-black'>
             <button className='float-right' onClick={onClose}>X</button>
             <div className='flex flex-col justify-center items-center gap-2'>
                 <h1 className='font-semibold'>User Register</h1>

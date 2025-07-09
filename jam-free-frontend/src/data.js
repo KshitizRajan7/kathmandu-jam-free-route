@@ -49,3 +49,51 @@ export const placeList = [
   { name: "Dakshinkali", lat: 27.6163, lng: 85.2792 },
   { name: "Balkhu", lat: 27.6857, lng: 85.3026 }
 ];
+
+export const trafficSegments = [
+  {
+    location: "Koteshwor",
+    coords: { lat: 27.7050, lng: 85.3239 },
+    freeFlowSpeed: 45,
+    currentSpeed: 10,
+    congestionLevel: "heavy",
+    trafficColor: "red",
+    timestamp: "2025-07-09T08:10:00Z"
+  },
+  {
+    location: "Kalanki",
+    coords: { lat: 27.6944, lng: 85.2744 },
+    freeFlowSpeed: 50,
+    currentSpeed: 22,
+    congestionLevel: "moderate",
+    trafficColor: "yellow",
+    timestamp: "2025-07-09T08:10:00Z"
+  },
+  {
+    location: "Maitighar",
+    coords: { lat: 27.7085, lng: 85.3123 },
+    freeFlowSpeed: 40,
+    currentSpeed: 39,
+    congestionLevel: "free-flow",
+    trafficColor: "green",
+    timestamp: "2025-07-09T08:10:00Z"
+  },
+  {
+    location: "Baneshwor",
+    coords: { lat: 27.7043, lng: 85.3187 },
+    freeFlowSpeed: 35,
+    currentSpeed: 12,
+    congestionLevel: "heavy",
+    trafficColor: "red",
+    timestamp: "2025-07-09T08:10:00Z"
+  },
+  {
+    location: "Guashala",
+    coords: { lat: 27.7179, lng: 85.3450 },
+    freeFlowSpeed: 40,
+    currentSpeed: 28,
+    congestionLevel: "moderate",
+    trafficColor: "yellow",
+    timestamp: "2025-07-09T08:10:00Z"
+  }
+];

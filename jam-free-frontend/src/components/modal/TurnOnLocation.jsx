@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TurnOnLocation = ({ setLocationOff, setShowDestinationModal, setUserLocation }) => {
+const TurnOnLocation = ({setModalOpen, setLocationOff, setShowDestinationModal, setUserLocation }) => {
     const ShowLocationRequest = () => {
         navigator.geolocation.getCurrentPosition(
             (position) => {
@@ -15,11 +15,12 @@ const TurnOnLocation = ({ setLocationOff, setShowDestinationModal, setUserLocati
                 console.error('Error getting location:', error);
             }
         )
+        
     }
     return (
-        <div className="absolute top-0 left-0 z-10 h-screen w-screen bg-gray-900/50 flex justify-center items-center">
+        <div className="absolute top-0 left-0 h-screen w-screen bg-gray-900/50 flex justify-center items-center">
             <div className="bg-white/70 text-black p-6 rounded-lg shadow-lg text-center">
-                <p className='float-right' onClick={() => setLocationOff()}>X</p>
+                <p className='float-right' onClick={() => {setModalOpen(false); setLocationOff(false)}}>X</p>
                 <h1 className="text-2xl font-semibold mb-4">
                     Please allow the browser to turn on your location.
                 </h1>

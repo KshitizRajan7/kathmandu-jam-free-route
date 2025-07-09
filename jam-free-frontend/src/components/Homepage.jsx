@@ -6,7 +6,7 @@ import TurnOnLocation from "./modal/TurnOnLocation";
 import { GoogleMap } from "@react-google-maps/api";
 import Map from "./Map";
 
-const Homepage = ({ setResetMap, resetMap, selectedSourceCoords, selectedDestinationCoords }) => {
+const Homepage = ({ setModalOpen, setResetMap, resetMap, selectedSourceCoords, selectedDestinationCoords }) => {
   const [locationOff, setLocationOff] = useState(true);
   const [userLocation, setUserLocation] = useState(null);
   const [showDestinationModal, setShowDestinationModal] = useState(false);
@@ -14,6 +14,10 @@ const Homepage = ({ setResetMap, resetMap, selectedSourceCoords, selectedDestina
   const [sourceCoords, setSourceCoords] = useState("");
   const [destinationCoords, setDestinationCoords] = useState("");
   const [selectedCity, setSelectedCity] = useState("Kathmandu");
+
+  useEffect(() => {
+    setModalOpen(locationOff || showDestinationModal);
+  }, [])
 
   useEffect(() => {
     if (resetMap) {
@@ -24,13 +28,14 @@ const Homepage = ({ setResetMap, resetMap, selectedSourceCoords, selectedDestina
 
   return (
     <div className="relative h-screen w-screen">
-      <Map className="h-screen w-screen" userLocation={userLocation} destinationCoords={destinationCoords} selectedSourceCoords={selectedSourceCoords} selectedDestinationCoords={selectedDestinationCoords} />
+      <Map className="h-screen w-screen" resetMap={resetMap} userLocation={userLocation} destinationCoords={destinationCoords} selectedSourceCoords={selectedSourceCoords} selectedDestinationCoords={selectedDestinationCoords} />
 
       {locationOff && (
         <TurnOnLocation
           setUserLocation={setUserLocation}
           setLocationOff={setLocationOff}
-          setShowDestinationModal={setShowDestinationModal} />
+          setShowDestinationModal={setShowDestinationModal}
+          setModalOpen={setModalOpen} />
       )}
 
       {showDestinationModal && (
@@ -41,6 +46,7 @@ const Homepage = ({ setResetMap, resetMap, selectedSourceCoords, selectedDestina
           setSelectedCity={setSelectedCity}
           setDestinationCoords={setDestinationCoords}
           setShowDestinationModal={setShowDestinationModal}
+          setModalOpen={setModalOpen}
         />
 
       )}

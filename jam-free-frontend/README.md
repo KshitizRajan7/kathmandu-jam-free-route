@@ -21,6 +21,10 @@ It provides a user interface to find traffic-free routes in Kathmandu Valley, fe
 - **Location Control:** Added "Turn On Location" feature to enable browser geolocation and mark the user's current position on the map
 - **Direct Destination Search:** Destination component now searches for coordinates and marks both the user's and destination's locations on the map
 - **Select Menu for Source/Destination:** Selecting source and destination names from the menu provides their respective coordinates and, when used, replaces the direct destination and current location markers on the map with the selected source
+- **Reset Map:** Added a resetMap feature using `useRef` to return the map to its initial position
+- **Conditional Menu Visibility:** Menu is now visible only when no modal is open on the screen
+- **Mock Traffic Data:** Added mock data for traffic situations; notifications now appear for heavy traffic regions on the map
+- **Notification Modal:** Implemented a notification modal to display information
 
 ## Recent Updates (July 5, 2025)
 
