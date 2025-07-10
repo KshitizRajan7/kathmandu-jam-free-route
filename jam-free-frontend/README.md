@@ -25,6 +25,7 @@ It provides a user interface to find traffic-free routes in Kathmandu Valley, fe
 - **Conditional Menu Visibility:** Menu is now visible only when no modal is open on the screen
 - **Mock Traffic Data:** Added mock data for traffic situations; notifications now appear for heavy traffic regions on the map
 - **Notification Modal:** Implemented a notification modal to display information about heavy traffic regions
+- **TrafficPolice Cartoon:** Added a trafficPolice cartoon that appears to notify users about heavy traffic in Kathmandu Valley. The cartoon is visible only when there are no markers on the map or when the map is reset. In the future, this will act as a chatbot/AI guide for users.
 
 ## Recent Updates (July 5, 2025)
 
@@ -32,6 +33,7 @@ It provides a user interface to find traffic-free routes in Kathmandu Valley, fe
 - Menu is now visible only when no modal is open on the screen
 - Added mock data for traffic situations; notifications now appear for heavy traffic regions on the map
 - Implemented a notification modal to display information about heavy traffic regions
+- Added a trafficPolice cartoon that appears to notify users about heavy traffic in Kathmandu Valley. The cartoon is visible only when there are no markers on the map or when the map is reset. In the future, this will act as a chatbot/AI guide for users.
 
 ## Getting Started
 
