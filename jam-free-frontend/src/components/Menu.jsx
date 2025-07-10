@@ -6,7 +6,8 @@ import UserRegister from './users/UserRegister';
 import UserContext from '@/context/UserContext';
 import SourceDestinationModal from './modal/SourceDestinationModal';
 
-const Menu = ({ modalOpen, setModalOpen, setResetMap, setSelectedSourceCoords, setSelectedDestinationCoords }) => {
+const Menu = ({ setUserLocation,
+    setDestinationCoords, modalOpen, setModalOpen, setResetMap, setSelectedSourceCoords, setSelectedDestinationCoords }) => {
     const { user } = useContext(UserContext);
     const [authForm, setAuthForm] = useState(null);
     const [showSourceDestinationModal, setShowSourceDestinationModal] = useState(false);
@@ -36,7 +37,9 @@ const Menu = ({ modalOpen, setModalOpen, setResetMap, setSelectedSourceCoords, s
             </ul>
 
                 <ul className='flex justify-between p-2 divide-x divide-white text-white text-sm text-center items-center h-12'>
-                    <li className='px-4 flex flex-col items-center' onClick={() => { setResetMap(true), setSelectedSourceCoords(null), setSelectedDestinationCoords(null) }}>
+                    <li className='px-4 flex flex-col items-center' onClick={() => {
+                        setResetMap(true), setSelectedSourceCoords(null), setSelectedDestinationCoords(null), setUserLocation(null), setDestinationCoords(null);
+                    }}>
                         <Map size={20} />
                         <span>Map</span>
                     </li>
@@ -44,7 +47,7 @@ const Menu = ({ modalOpen, setModalOpen, setResetMap, setSelectedSourceCoords, s
                         <Route size={20} />
                         <span>Alt Routes</span>
                     </li>
-                    <li className='px-a4 flex flex-col items-center' onClick={() =>{ setShowSourceDestinationModal(true),setModalOpen(true)}}>
+                    <li className='px-a4 flex flex-col items-center' onClick={() => { setShowSourceDestinationModal(true), setModalOpen(true) }}>
                         <LocateFixed size={20} />
                         <span>Select</span>
                     </li>

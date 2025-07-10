@@ -26,7 +26,7 @@ const options = {
     maxZoom: 16,
     minZoom: 12,
     disableDefaultUI: true,
-    zoomControl: true,
+    // zoomControl: true,
 };
 
 
