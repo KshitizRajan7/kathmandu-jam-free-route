@@ -26,10 +26,13 @@ It provides a user interface to find traffic-free routes in Kathmandu Valley, fe
 - **Mock Traffic Data:** Added mock data for traffic situations; notifications now appear for heavy traffic regions on the map
 - **Notification Modal:** Implemented a notification modal to display information about heavy traffic regions
 - **TrafficPolice Cartoon:** Added a trafficPolice cartoon that appears to notify users about heavy traffic in Kathmandu Valley. The cartoon is visible only when there are no markers on the map or when the map is reset. In the future, this will act as a chatbot/AI guide for users.
+- **AlternateRoute Modal:** Added an AlternateRoute modal to suggest alternate routes with lower traffic congestion levels. Currently, this is a modal; in the future, it will use the Directions API for route suggestions.
+- **TrafficStatus Modal:** Added a TrafficStatus modal to display detailed traffic information about the selected location.
 
-## Recent Updates (July 10, 2025)
+## Recent Updates (July 11, 2025)
 
-- Added a trafficPolice cartoon that appears to notify users about heavy traffic in Kathmandu Valley. The cartoon is visible only when there are no markers on the map or when the map is reset. In the future, this will act as a chatbot/AI guide for users.
+- Added AlternateRoute modal to suggest alternate routes with lower traffic congestion levels (Directions API integration planned).
+- Added TrafficStatus modal to display detailed traffic information about the selected location.
 
 ## Getting Started
 
