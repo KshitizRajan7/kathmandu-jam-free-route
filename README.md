@@ -8,7 +8,8 @@ A real-time, mobile-responsive route finder for Kathmandu Valley that helps user
   Currently, this is the only part of the project.  
   **Recent updates:**
 
-  - Added a trafficPolice cartoon that appears to notify users about heavy traffic in Kathmandu Valley. The cartoon is visible only when there are no markers on the map or when the map is reset. In the future, this will act as a chatbot/AI guide for users.
+  - Added AlternateRoute modal to suggest alternate routes with lower traffic congestion levels (Directions API integration planned).
+  - Added TrafficStatus modal to display detailed traffic information about the selected location.
 
 - `/backend` — _(Coming soon)_ Backend API and server to provide live traffic data and route calculations.
 
