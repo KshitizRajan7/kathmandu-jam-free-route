@@ -33,7 +33,7 @@ export default function Home() {
         }
       />
 
-      <Menu setResetMap={setResetMap} setSelectedSourceCoords={setSelectedSourceCoords} setSelectedDestinationCoords={setSelectedDestinationCoords} setModalOpen={setModalOpen} modalOpen={modalOpen} setUserLocation={setUserLocation}               // ✅ add this
+      <Menu setResetMap={setResetMap} setSelectedSourceCoords={setSelectedSourceCoords} setSelectedDestinationCoords={setSelectedDestinationCoords} setModalOpen={setModalOpen} modalOpen={modalOpen} setUserLocation={setUserLocation}
         setDestinationCoords={setDestinationCoords} />
     </>
 

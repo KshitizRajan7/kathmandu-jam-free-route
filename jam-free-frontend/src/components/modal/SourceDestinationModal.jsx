@@ -46,20 +46,6 @@ const SelectRouteModal = ({ onClose, setSelectedSourceCoords, setSelectedDestina
         }
       </datalist>
 
-      {/* Or dropdown to select from cities */}
-      {/* <select
-        className="w-full p-2 mb-4 border rounded"
-        value={initialPoint}
-        onChange={(e) => setInitialPoint(e.target.value)}
-      >
-        <option value="">-- Select Initial Point --</option>
-        {cities.map((city) => (
-          <option key={"initial-" + city} value={city}>
-            {city}
-          </option>
-        ))}
-      </select> */}
-
       {/* Final Point Input */}
       <label className="text-left font-semibold">Final Point</label>
       <input

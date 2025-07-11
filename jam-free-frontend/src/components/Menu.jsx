@@ -5,15 +5,19 @@ import UserLogin from './users/UserLogin';
 import UserRegister from './users/UserRegister';
 import UserContext from '@/context/UserContext';
 import SourceDestinationModal from './modal/SourceDestinationModal';
+import TrafficStatus from './modal/TrafficStatus';
+import AlternateRoute from './modal/AlternateRoutes';
 
 const Menu = ({ setUserLocation,
     setDestinationCoords, modalOpen, setModalOpen, setResetMap, setSelectedSourceCoords, setSelectedDestinationCoords }) => {
     const { user } = useContext(UserContext);
     const [authForm, setAuthForm] = useState(null);
     const [showSourceDestinationModal, setShowSourceDestinationModal] = useState(false);
+    const [showTrafficStatusModal, setShowTrafficStatusModal] = useState(false);
+    const [showAlternateRouteModal, setShowAlternateRouteModal] = useState(false);
     useEffect(() => {
-        setModalOpen(showSourceDestinationModal || authForm);
-    }, [authForm, showSourceDestinationModal]);
+        setModalOpen(showSourceDestinationModal || authForm || showTrafficStatusModal || showAlternateRouteModal);
+    }, [authForm, showSourceDestinationModal, showTrafficStatusModal, showAlternateRouteModal]);
 
     return (
         <div className='fixed bottom-0 left-0 w-full text-white bg-gray-600/50 '>
@@ -43,7 +47,7 @@ const Menu = ({ setUserLocation,
                         <Map size={20} />
                         <span>Map</span>
                     </li>
-                    <li className='px-4 flex flex-col items-center'>
+                    <li className='px-4 flex flex-col items-center' onClick={()=>{ setShowAlternateRouteModal(true) , setModalOpen(true)}}>
                         <Route size={20} />
                         <span>Alt Routes</span>
                     </li>
@@ -51,7 +55,7 @@ const Menu = ({ setUserLocation,
                         <LocateFixed size={20} />
                         <span>Select</span>
                     </li>
-                    <li className='px-4 flex flex-col items-center'>
+                    <li className='px-4 flex flex-col items-center' onClick={() => { setShowTrafficStatusModal(true), setModalOpen(true) }}>
                         <TrafficCone size={20} />
                         <span>Traffic</span>
                     </li>
@@ -60,6 +64,20 @@ const Menu = ({ setUserLocation,
                         <span>{user ? user.name : 'login'}</span>
                     </li>
                 </ul></>)}
+            {
+                showAlternateRouteModal && (
+                    <div className='bg-gray-800/30 w-screen h-screen flex justify-center items-center'>
+                        <AlternateRoute onClose={() => setShowAlternateRouteModal(false)} setSelectedSourceCoords={setSelectedSourceCoords} setSelectedDestinationCoords={setSelectedDestinationCoords} />
+                    </div>
+                )
+            }
+            {
+                showTrafficStatusModal && (
+                    <div className='bg-gray-800/30 w-screen h-screen flex justify-center items-center'>
+                        <TrafficStatus onClose={() => setShowTrafficStatusModal(false)} setSelectedSourceCoords={setSelectedSourceCoords} setSelectedDestinationCoords={setSelectedDestinationCoords} />
+                    </div>
+                )
+            }
             {
                 showSourceDestinationModal && (
                     <div className='bg-gray-800/30 w-screen h-screen flex justify-center items-center'>
